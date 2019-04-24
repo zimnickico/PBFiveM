@@ -12,7 +12,7 @@ An Officer may press `Ctrl + H` to activate the Panic Button, which will display
 # Installation
 
 Although getting it to work couldn't be easier here you go.
-Firts drop PB (the file inside, not the master branch),
+First drop PB (the file inside, not the master branch),
 then start the resource in your server.cfg
 
 ```lua
