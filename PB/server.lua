@@ -1,0 +1,5 @@
+RegisterServerEvent("panic")
+AddEventHandler("panic", function()
+    print("1")
+    TriggerClientEvent("pb", -1)
+end)

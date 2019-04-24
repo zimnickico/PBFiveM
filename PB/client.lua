@@ -1,53 +1,18 @@
---------------------------------
------- PANIC BUTTON SCRIPT -----
---------- MADE BY CHRIS --------
-
-blip = nil
-blips = {}
-
--- Intial
-
 Citizen.CreateThread(function()
-    while true do
+while true do
         Citizen.Wait(0)
-        if IsControlPressed(1, 19) and IsControlJustPressed(1, 104) then
-
-local location = GetStreetNameAtCoord(playerPos, streetName, crossingRoad)
-local location2 = GetStreetNameFromHashKey(location)
-print (playerPos)
-print (location2)
-
-local name = GetPlayerName(PlayerId())
-Info()
-Citizen.Wait(100)
-Info2(location2)
-PlaySound(-1, "5_Second_Timer", "DLC_HEISTS_GENERAL_FRONTEND_SOUNDS", 0);
-
- local name = GetPlayerName(PlayerId())
-local ped = GetPlayerPed(-1)
-local playerPos = GetEntityCoords(ped, true)
-print (playerPos)
-
--- Blip
-
-blip = AddBlipForCoord (playerPos)
-SetBlipSprite(blip, 459)
-SetBlipScale(blip, 1.5)
-SetBlipColour(blip, 1)
- BeginTextCommandSetBlipName("STRING")
- AddTextComponentString('Panic Button by ' .. name)
- EndTextCommandSetBlipName(blip)
- table.insert(blips, blip)
-     Wait(60000)
-    for i, blip in pairs(blips) do
-        RemoveBlip(blip)
-    end
-
+        if IsControlJustPressed(1, 104) then
+        TriggerServerEvent("panic")
+        print(2)
 end
 end
 end)
 
--- Info
+local location = GetStreetNameAtCoord(playerPos, streetName, crossingRoad)
+local location2 = GetStreetNameFromHashKey(location)
+local name = GetPlayerName(PlayerId())
+local ped = GetPlayerPed(-1)
+local playerPos = GetEntityCoords(ped, true)
 
 function Info(text)
     local txd = "CHAR_CALL911"
@@ -74,7 +39,35 @@ function Info2(text)
 	DrawNotification(true, true)
 end
 
+RegisterNetEvent("pb")
+AddEventHandler("pb", function()
+print(3)
 
---- YOU MAY MODIFY THE CODE ABOVE, ---
---- ALTHOUGH YOU MAY NOT REALESE IT ---
---- WITHOUT MY EXPLICIT PERMISSION ---
+print (playerPos)
+print (location2)
+
+Info()
+Citizen.Wait(100)
+Info2(location2)
+PlaySound(-1, "5_Second_Timer", "DLC_HEISTS_GENERAL_FRONTEND_SOUNDS", 0);
+
+-- Blip
+blip = nil
+blips = {}
+
+blip = AddBlipForCoord (playerPos)
+SetBlipSprite(blip, 459)
+SetBlipScale(blip, 1.5)
+SetBlipColour(blip, 1)
+ BeginTextCommandSetBlipName("STRING")
+ AddTextComponentString('Panic Button by ' .. name)
+ EndTextCommandSetBlipName(blip)
+ table.insert(blips, blip)
+     Wait(60000)
+    for i, blip in pairs(blips) do
+        RemoveBlip(blip)
+    end
+
+-- Info
+
+end)
