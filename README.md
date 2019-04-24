@@ -4,7 +4,7 @@ Over complicated FiveM Panic Button Script
 
 # Functionality
 
-An Ofiicer may press `Ctrl + H` to activate the Panic Button, which will display a blip on the map, display a short notification and play a short sound.
+An Officer may press `Ctrl + H` to activate the Panic Button, which will display a blip on the map, display a short notification and play a short sound.
 
 ![Image 1](https://cdn.discordapp.com/attachments/547812834491498496/570666551007510528/unknown.png)
 ![Image 2](https://cdn.discordapp.com/attachments/547812834491498496/570668805689442342/unknown.png)
