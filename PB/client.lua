@@ -10,7 +10,7 @@ blips = {}
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
-        if IsControlPressed(1, 19) and IsControlJustPressed(1, 46) then
+        if IsControlPressed(1, 19) and IsControlJustPressed(1, 104) then
 
 local location = GetStreetNameAtCoord(playerPos, streetName, crossingRoad)
 local location2 = GetStreetNameFromHashKey(location)
