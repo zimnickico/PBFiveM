@@ -30,6 +30,6 @@ Woho, you are done. It should work now!
 
 # Known Issues
 
-*Player is unable to activate to Panic Buttons (Semi Intentional)
+*Player is unable to activate two Panic Buttons at the same time (Semi Intentional)
 
 *The notification will sometimes display the wrong streetname.
